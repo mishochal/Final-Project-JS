@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="introduction">
+        <h2 id="intro-message">Please enter your ID</h2>
+        <div class="intro-input input-container">
+            <input type="number" name="id" id="id" placeholder="Enter your ID">
+            <button class="btn" onclick="toUserPage()">Enter</button>
+        </div>
+    </div>
+
+    <div id="user-page">
+        <h2 id="user-message"></h2>
+        <div class="user-btns">
+            <button class="btn" onclick="checkBalance()">Check Balance</button>
+            <button class="btn" onclick="withdraw()">Withdraw</button>
+            <button class="btn" onclick="deposit()">Deposit</button>
+        </div>
+        <button class="btn" id="main-page-btn" onclick="toMainPage()">Main Page</button>
+    </div>
+
+    <div id="transaction">
+        <h2 id="transaction-message"></h2>
+        <div class="input-container">
+            <input type="number" name="amount-of-money" id="transaction-inp" placeholder="Amount of money">
+            <button class="btn" onclick="completeTransaction()">Enter</button>
+        </div>
+        <button class="btn" onclick="closeTransaction()">Close</button>
+        <button class="btn" id="main-page-btn" onclick="toMainPage()">Main Page</button>
+    </div>
+
+    <script src="main.js"></script>
+</body>
+
+</html>

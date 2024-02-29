@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Guess The Number</title>
+</head>
+
+<body>
+    <div id="introduction">
+        <h2 id="intro-message">
+            Hello. Please enter the range of numbers that you'd like to generate random numbers from.
+        </h2>
+        <div class="inputs">
+            <input type="number" name="low" id="low" placeholder="Enter lowest">
+            <input type="number" name="high" id="high" placeholder="Enter highest">
+            <button class="btn" id="start" onclick="startGame()">Start</button>
+        </div>
+    </div>
+
+    <div id="game">
+        <p id="range"></p>
+        <h2 id="game-message">Try guessing the number.</h2>
+        <div class="inputs">
+            <input type="number" name="guess" id="guess-inp">
+            <button class="btn" id="guess-btn" onclick="guessNum()">Guess</button>
+        </div>
+    </div>
+
+    <div id="after-game">
+        <h2 id="after-game-message"></h2>
+        <button class="btn" id="play-again-btn" onclick="playAgain()">Play Again</button>
+    </div>
+
+    <script src="main.js"></script>
+</body>
+
+</html>
