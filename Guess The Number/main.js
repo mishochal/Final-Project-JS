@@ -56,6 +56,7 @@ function playAgain() {
     lowRange.value = "";
     highRange.value = "";
     playerGuess.value = "";
+    introMessage.innerHTML = "Please enter the range of numbers that you'd like to generate random numbers from."
     gameMessage.innerHTML = "Try guessing the number"
-    afterGameMsg = "";
+    afterGameMsg.innerHTML = "";
 }
