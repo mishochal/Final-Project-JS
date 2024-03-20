@@ -10,8 +10,20 @@
 
 <body>
     <div class="hangman">
+        <div id="game-type">
+            <h2 class="game-type-msg">
+                Would you like to play with hints?
+                <br>
+                Please note that you'll have 5 tries instead of 8
+            </h2>
+            <div class="game-type-btns">
+                <button class="btn" onclick="initHangman(true)">Yes</button>
+                <button class="btn" onclick="initHangman(false)">No</button>
+            </div>
+        </div>
         <h2 class="introduction">The word you need to guess is:</h2>
         <h2 id="word-to-guess"></h2>
+        <h2 id="hint"></h2>
         <div class="user-input">
             <input type="text" name="letter" id="letter" placeholder="Enter a letter" maxlength="1">
             <button class="btn" id="enter-letter" onclick="confirmLetter()">Enter</button>
@@ -23,7 +35,7 @@
         <div id="after-game">
             <h3 id="message"></h3>
             <div class="after-game-btns">
-                <button class="btn" id="play-again" onclick="initHangman()">Play Again</button>
+                <button class="btn" id="play-again" onclick="playAgain()">Play Again</button>
                 <button class="btn" id="end-game" onclick="endGame()">End Game</button>
             </div>
         </div>

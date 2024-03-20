@@ -1,11 +1,19 @@
 const words = ["HANGMAN", "BOOK", "HOUSE", "CHOCOLATE", "COMPUTER",
     "SUNGLASSES", "LANGUAGE", "LIFEGUARD", "BUILDING", "EARRING",
     "MOUSE", "SHELF", "ARMCHAIR", "DOG", "SCREEN",
-    "BAR", "COFFEE", "TEE", "DOLPHIN", "LAKE",
+    "BAR", "COFFEE", "TEE", "DUNE", "LAKE",
     "LION", "AIRPLANE", "BAG", "CARPET", "HAIRDRESSER"];
 
+const hints = ["Game", "Read", "Live", "Cocoa", "Programming",
+    "Eyes", "Speak", "Protection", "Structure", "Jewel",
+    "Rodent", "Book", "Sit", "Pet", "Monitor",
+    "Cafe", "Beverage", "Beverage", "Desert", "Pond",
+    "King", "Fly", "Pack", "Floor", "Stylist"];
+
+const gameType = document.getElementById("game-type");
 const numberOfLives = document.getElementById("number-of-tries");
 const wordToGuess = document.getElementById("word-to-guess");
+const hint = document.getElementById("hint")
 const input = document.getElementById("letter");
 const inputBtn = document.getElementById("enter-letter");
 const afterGame = document.getElementById("after-game");
@@ -16,14 +24,21 @@ const endMessage = document.getElementById("message");
 let word = ""
 let isFinished = false;
 
-function initHangman() {
+function initHangman(usesHints) {
     isFinished = false;
     afterGame.style.display = "none";
+    gameType.style.display = "none";
     let randomIndex = Math.floor(Math.random() * words.length);
     word = words[randomIndex];
     let hiddenWord = "".padEnd(word.length, "_");
     wordToGuess.innerHTML = hiddenWord;
-    numberOfLives.innerHTML = 8;
+    if (usesHints) {
+        numberOfLives.innerHTML = 5;
+        hint.innerHTML = `Your hint is: "${hints[randomIndex]}"`;
+        hint.style.display = "block";
+    } else {
+        numberOfLives.innerHTML = 8;
+    }
 }
 
 function confirmLetter() {
@@ -69,10 +84,12 @@ function finishGame(message) {
     afterGame.style.display = "flex";
 }
 
+function playAgain() {
+    gameType.style.display = "flex";
+}
+
 function endGame() {
     afterGame.style.display = "none";
     inputBtn.style.pointerEvents = "none";
     input.readOnly = true;
 }
-
-initHangman();

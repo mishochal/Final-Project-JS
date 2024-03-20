@@ -9,7 +9,8 @@ body {
     background-color: #222;
 }
 
-.hangman {
+.hangman,
+#game-type {
     height: 100vh;
     width: 100%;
     display: flex;
@@ -17,7 +18,19 @@ body {
     align-items: center;
     justify-content: center;
     gap: 60px;
-    position: relative;
+    position: absolute;
+}
+
+#game-type {
+    background-color: #0f0f0f;
+    z-index: 5;
+}
+
+.game-type-msg {
+    font-size: 28px;
+    color: white;
+    text-align: center;
+    line-height: 150%;
 }
 
 .introduction {
@@ -29,6 +42,12 @@ body {
     font-size: 50px;
     color: white;
     letter-spacing: 15px;
+}
+
+#hint {
+    font-size: 20px;
+    color: white;
+    display: none;
 }
 
 .user-input {
